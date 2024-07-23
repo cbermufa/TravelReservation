@@ -1,0 +1,44 @@
+﻿#formSearch {
+    width: 100%;
+    margin: 0 auto;
+    padding: 20px;
+    background: var(--color-background);
+    border-radius: 5px;
+    box-shadow: var(--box-shadow);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#formSearch .form-group{
+    margin: 1rem;
+}
+
+#formSearch .citiesFlights {
+    width: 30%;
+}
+
+#formSearch .btnBusquedaVuelos {
+    width: 10%;
+    height: 45px;
+    position: relative;
+    top: 10px;
+}
+
+.fg-departureDate {
+    width: 20%;
+}
+
+.fg-adults {
+    width: 10%;
+}
+
+
+
+.btn {
+    padding: 5px 10px;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+

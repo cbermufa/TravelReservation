@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <data name="Name.Required" xml:space="preserve">
+    <value>El nombre es obligatorio.</value>
+  </data>
+  <data name="Name.StringLength" xml:space="preserve">
+    <value>El nombre no puede tener más de 50 caracteres.</value>
+  </data>
+  <data name="Email.Required" xml:space="preserve">
+    <value>El correo electrónico es obligatorio.</value>
+  </data>
+  <data name="Email.EmailAddress" xml:space="preserve">
+    <value>El correo electrónico no es válido.</value>
+  </data>
+  <data name="Password.Required" xml:space="preserve">
+    <value>La contraseña es obligatoria.</value>
+  </data>
+  <data name="Password.StringLength" xml:space="preserve">
+    <value>La contraseña debe tener al menos 6 caracteres.</value>
+  </data>
+  <data name="ConfirmPassword.Required" xml:space="preserve">
+    <value>La confirmación de la contraseña es obligatoria.</value>
+  </data>
+  <data name="ConfirmPassword.Compare" xml:space="preserve">
+    <value>La contraseña y la confirmación de la contraseña no coinciden.</value>
+  </data>
+</root>

@@ -1,0 +1,42 @@
+﻿@model TravelReservation.ViewModels.LoginViewModel
+
+<head>
+    <link rel="stylesheet" href="~/css/site.css">
+</head>
+
+
+<div>
+    @if (TempData["ErrorMessage"] != null)
+    {
+        <div class="alert alert-danger">@TempData["ErrorMessage"]</div>
+    }
+    @if (TempData["SuccessMessage"] != null)
+    {
+        <div class="alert alert-success">@TempData["SuccessMessage"]</div>
+    }
+</div>
+
+<form asp-action="Login" method="post" class="forms formLogin">
+    <h4>Iniciar Sesión</h4>
+    @Html.AntiForgeryToken()
+    <div class="form-group">
+        <label asp-for="Email" class="control-label">Correo Electrónico</label>
+        <input asp-for="Email" class="form-control" />
+        <span asp-validation-for="Email" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="Password" class="control-label">Contraseña</label>
+        <input asp-for="Password" class="form-control" />
+        <span asp-validation-for="Password" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <input asp-for="RememberMe" /> @Html.DisplayNameFor(m => m.RememberMe)
+    </div>
+    <button type="submit" class="btn btn-primary">Iniciar Sesión</button>
+</form>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}

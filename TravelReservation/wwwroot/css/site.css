@@ -1,0 +1,211 @@
+:root {
+    --color-background: #FFFFFF;
+    --color-secondary-background: #F4F4F4;
+    --color-border: #CCCCCC;
+    --color-text-primary: #333333;
+    --color-text-secondary: #666666;
+    --color-link: #007BFF;
+    --color-header-footer: #333333; 
+    --color-header-footer-text: #FFFFFF;
+    --color-button: #007BFF;
+    --color-button-hover: #0056b3;
+    --color-button-text: #FFFFFF;
+    --color-button-border: #007BFF;
+    --color-alert-success-bg: #D4EDDA;
+    --color-alert-success-text: #155724;
+    --color-alert-danger-bg: #F8D7DA;
+    --color-alert-danger-text: #721C24;
+    --color-danger-button: #DC3545;
+    --color-danger-button-hover: #c82333;
+    --color-danger-button-text: #FFFFFF;
+    --color-success-button: #28A745;
+    --color-success-button-hover: #218838;
+    --color-success-button-text: #FFFFFF;
+    --box-shadow: rgba(0, 0, 0, 0.09) 0px 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px, rgba(0, 0, 0, 0.09) 0px 8px 4px, rgba(0, 0, 0, 0.09) 0px 16px 8px, rgba(0, 0, 0, 0.09) 0px 32px 16px;
+}
+
+
+
+body, html {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    background-color: var(--color-background);
+    color: var(--color-text-primary);
+}
+
+header, footer {
+    width: 100%;
+    background-color: var(--color-header-footer);
+    color: var(--color-background);
+}
+
+.header-content, .footer-content, .container {
+    width: 80%;
+    margin: 0 auto;
+}
+
+nav {
+    background: var(--color-header-footer) !important;
+    margin: 10px 0px !important;
+    color: var(--color-header-footer-text) !important;
+}
+
+.nav-link {
+    color: var(--color-header-footer-text) !important;
+}
+
+.nav-link:hover {
+    color: var(--color-background) !important;
+}
+
+nav-item{
+    margin: 5px 0px;
+}
+.container {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: var(--color-secondary-background);
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.btn-primary {
+    background-color: var(--color-button) !important;
+    border-color: var(--color-button-border) !important;
+    color: var(--color-background) !important;
+}
+
+.alert-success {
+    background-color: var(--color-alert-success-bg) !important;
+    color: var(--color-alert-success-text) !important;
+}
+
+.alert-danger {
+    background-color: var(--color-alert-danger-bg) !important;
+    color: var(--color-alert-danger-text) !important;
+}
+
+button.btn-legacy-primary-button {
+    background: var(--color-header-footer);
+    color: var(--color-background);
+    border: none;
+    padding: 10px 5px;
+    border-radius: 5px;
+    box-shadow: var(--box-shadow);
+}
+
+button.btn-legacy-primary-button:disabled {
+    background: rgba(0, 128, 128, 0.5);
+    color: rgba(255, 255, 255, 0.7);
+    cursor: not-allowed;
+}
+
+.container h2 {
+    margin: 1rem 0rem;
+}
+
+.container h3 {
+    margin: 3rem 0rem;
+}
+
+/* Código para los estilos de la búsqueda de vuelos y del carrito de compras */
+
+.resultsContainer {
+    margin-top: 20px;
+}
+
+.resultsItinerariesContainer {
+    background: #fff;
+    box-shadow: var(--box-shadow);
+    margin: 15px 0px;
+    border-radius: 5px;
+    padding: 25px;
+}
+
+.results-title, .result-item {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 10px;
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+    text-align: center;
+}
+
+.result-summary {
+    text-align: end;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+    .result-summary div {
+        margin: 10px;
+    }
+
+.result-item {
+    margin-bottom: 10px;
+}
+
+    .result-item div {
+        padding: 5px;
+    }
+
+.results-title {
+    background-color: #f8f9fa;
+    font-weight: bold;
+    padding: 5px 25px;
+}
+
+    .results-title div {
+        padding: 10px 5px;
+        background-color: #f8f9fa;
+    }
+
+.resultsContainer ul {
+    list-style: none;
+    padding: 0;
+}
+
+.forms {
+    width: 50%;
+    margin: 0 auto;
+    background: var(--color-background);
+    padding: 30px;
+    border-radius: 5px;
+    box-shadow: var(--box-shadow);
+}
+
+.forms h4 {
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+}
+
+.cartContainer {
+    background: var(--color-background);
+    padding: 25px;
+    border-radius: 5px;
+    box-shadow: var(--box-shadow);
+}
+
+.cartContainer h4 {
+    text-align: center;
+}
+
+#cartItemsContainer {
+    margin: 30px 0px;
+}
+
+#cartItemsContainer p{
+    text-align: center;
+}
+
+#cartSummary {
+    text-align: center;
+}
+

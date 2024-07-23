@@ -1,0 +1,39 @@
+﻿
+@model IEnumerable<TravelReservation.Models.Flight>
+
+@{
+    ViewData["Title"] = "Reservaciones";
+}
+
+<head>
+    <link rel="stylesheet" href="~/css/flight-search.css">
+    <link rel="stylesheet" href="~/css/site.css">
+</head>
+
+<h2>Mis Reservaciones</h2>
+
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>Origen</th>
+            <th>Destino</th>
+            <th>Fecha de Salida</th>
+            <th>Fecha de Llegada</th>
+            <th>Tiquetes Comprados</th>
+            <th>Fecha de Compra</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var flight in Model)
+        {
+            <tr>
+                <td>@flight.Origin</td>
+                <td>@flight.Destination</td>
+                <td>@flight.DepartureDate</td>
+                <td>@flight.ArrivalDate</td>
+                <td>@flight.TicketsPurchased</td>
+                <td>@flight.PurchaseDate</td>
+            </tr>
+        }
+    </tbody>
+</table>

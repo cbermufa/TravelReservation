@@ -1,0 +1,115 @@
+﻿@model TravelReservation.ViewModels.ProfileViewModel
+
+<head>
+    <link rel="stylesheet" href="~/css/profile.css">
+</head>
+
+<h3>Modificar Perfil</h3>
+
+<div>
+    @if (TempData["ErrorMessage"] != null)
+    {
+        <div class="alert alert-danger">@TempData["ErrorMessage"]</div>
+    }
+    @if (TempData["SuccessMessage"] != null)
+    {
+        <div class="alert alert-success">@TempData["SuccessMessage"]</div>
+    }
+</div>
+
+<div class="profile-container">
+    <div class="profile-info">
+        <form asp-action="EditProfile" method="post" id="editProfileForm">
+            <div class="editForm">
+                <div class="personalInfo">
+                    <div class="form-group">
+                        <label asp-for="Name" class="control-label">Nombre</label>
+                        <input asp-for="Name" class="form-control" id="Name" />
+                        <span asp-validation-for="Name" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="Email" class="control-label">Correo Electrónico</label>
+                        <input asp-for="Email" class="form-control" readonly />
+                        <span asp-validation-for="Email" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="PhoneNumber" class="control-label">Número de Teléfono</label>
+                        <input asp-for="PhoneNumber" class="form-control" id="PhoneNumber" />
+                        <span asp-validation-for="PhoneNumber" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="Password" class="control-label">Nueva Contraseña</label>
+                        <input asp-for="Password" class="form-control" id="Password" />
+                        <span asp-validation-for="Password" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="ConfirmPassword" class="control-label">Confirmar Nueva Contraseña</label>
+                        <input asp-for="ConfirmPassword" class="form-control" id="ConfirmPassword" />
+                        <span asp-validation-for="ConfirmPassword" class="text-danger"></span>
+                    </div>
+                </div>
+                <div class="travelPreferences">
+                    <div class="form-group">
+                        <label class="control-label">Asiento Preferido</label>
+                        <div>
+                            <input type="radio" name="PreferredSeat" value="0" @(Model.PreferredSeat == 0 ? "checked" : "")> Sin Preferencia<br>
+                            @foreach (var option in (List<SeatPreference>)ViewData["SeatOptions"])
+                            {
+                                <input type="radio" name="PreferredSeat" value="@option.Id" @(Model.PreferredSeat == option.Id ? "checked" : "")> @option.Name
+                                <br>
+                            }
+                        </div>
+                        <span asp-validation-for="PreferredSeat" class="text-danger"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="control-label">Comida Preferida</label>
+                        <div>
+                            <input type="radio" name="PreferredMeal" value="0" @(Model.PreferredMeal == 0 ? "checked" : "")> Sin Preferencia<br>
+                            @foreach (var option in (List<MealPreference>)ViewData["MealOptions"])
+                            {
+                                <input type="radio" name="PreferredMeal" value="@option.Id" @(Model.PreferredMeal == option.Id ? "checked" : "")> @option.Name
+                                <br>
+                            }
+                        </div>
+                        <span asp-validation-for="PreferredMeal" class="text-danger"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="control-label">Aerolínea Preferida</label>
+                        <div>
+                            <input type="radio" name="PreferredAirline" value="0" @(Model.PreferredAirline == 0 ? "checked" : "")> Sin Preferencia<br>
+                            @foreach (var option in (List<AirlinePreference>)ViewData["AirlineOptions"])
+                            {
+                                <input type="radio" name="PreferredAirline" value="@option.Id" @(Model.PreferredAirline == option.Id ? "checked" : "")> @option.Name
+                                <br>
+                            }
+                        </div>
+                        <span asp-validation-for="PreferredAirline" class="text-danger"></span>
+                    </div>
+                </div>
+            </div>
+            <button type="submit" class="btn btn-primary" id="saveChangesButton" disabled>Guardar Cambios</button>
+        </form>
+    </div>
+</div>
+
+@section Scripts {
+    @{
+        <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
+        <script src="~/js/edit.js"></script>
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}
+
+@if (!ViewData.ModelState.IsValid)
+{
+    <div class="alert alert-danger">
+        <ul>
+            @foreach (var error in ViewData.ModelState.Values.SelectMany(v => v.Errors))
+            {
+                <li>@error.ErrorMessage</li>
+            }
+        </ul>
+    </div>
+}
